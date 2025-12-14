@@ -1,6 +1,87 @@
-@StockMarketSim.Api_HostAddress = http://localhost:5136
+@HostAddress = http://localhost:5136
 
-GET {{StockMarketSim.Api_HostAddress}}/weatherforecast/
+// Get all stocks
+GET {{HostAddress}}/stocks
 Accept: application/json
+
+###
+ 
+// Get specific stock by ticker (AAPL)
+GET {{HostAddress}}/stocks/AAPL
+Accept: application/json
+
+###
+
+// Get specific stock by ticker (MSFT)
+GET {{HostAddress}}/stocks/MSFT
+Accept: application/json
+
+###
+
+// Create a new stock
+POST {{HostAddress}}/stocks
+Content-Type: application/json
+
+{
+  "tickerSymbol": "NFLX",
+  "companyName": "Netflix Inc.",
+  "price": 475.50
+}
+
+###
+
+// Create another stock
+POST {{HostAddress}}/stocks
+Content-Type: application/json
+
+{
+  "tickerSymbol": "AMD",
+  "companyName": "Advanced Micro Devices",
+  "price": 145.25
+}
+
+###
+
+// Update stock price and company name
+PUT {{HostAddress}}/stocks/AAPL
+Content-Type: application/json
+
+{
+  "companyName": "Apple Inc. (Updated)",
+  "price": 185.75
+}
+
+###
+
+// Update stock price only
+PUT {{HostAddress}}/stocks/MSFT
+Content-Type: application/json
+
+{
+  "price": 380.25
+}
+
+###
+
+// Update company name only
+PUT {{HostAddress}}/stocks/GOOGL
+Content-Type: application/json
+
+{
+  "companyName": "Alphabet Inc. Class A"
+}
+
+###
+
+// Delete a stock
+DELETE {{HostAddress}}/stocks/JNJ
+
+###
+
+// SSE - Live stock price updates (Server-Sent Events)
+// NOTE: This will stream real-time updates. Stop the request manually when done testing.
+GET {{HostAddress}}/stocks/live
+Accept: text/event-stream
+Cache-Control: no-cache
 
 ###
