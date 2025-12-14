@@ -480,9 +480,7 @@ docker run -d -p 8080:8080 -p 8081:8081 --name stockmarketsim stockmarketsim-api
 - **Primary Documentation**: README.md in repository root
 - **Implementation Details**: `/docs` folder contains:
   - `Plan.md` - Original implementation plan
-  - `CSharp14-Implementation.md` - C# 14 feature usage details
   - `OpenAPI-Guide.md` - API documentation guide
-  - `README-Update-Summary.md` - Documentation changelog
 - **Code Comments**: Minimal inline comments; code should be self-documenting
 - **XML Documentation**: Not currently used; consider adding for public APIs
 - **API Documentation**: Auto-generated via OpenAPI and displayed in Scalar UI
