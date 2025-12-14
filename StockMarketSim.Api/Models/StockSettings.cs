@@ -4,7 +4,7 @@ public class StockSettings
 {
     public required int UpdateIntervalSeconds
     {
-        get => field;
+        get;
         init
         {
             if (value < 1)

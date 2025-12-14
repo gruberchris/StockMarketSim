@@ -15,11 +15,11 @@ public class StockStore(IConfiguration configuration)
 
     public Stock? GetStockByTicker(string ticker) => _stocks.GetValueOrDefault(ticker);
 
-    public bool AddStock(Stock stock) => _stocks.TryAdd(stock.TickerSymbol, stock);
+    public void AddStock(Stock stock) => _stocks.TryAdd(stock.TickerSymbol, stock);
 
     public void UpdateStock(string ticker, Stock stock) => _stocks[ticker] = stock;
 
-    public bool DeleteStock(string ticker) => _stocks.TryRemove(ticker, out _);
+    public void DeleteStock(string ticker) => _stocks.TryRemove(ticker, out _);
 }
 
 

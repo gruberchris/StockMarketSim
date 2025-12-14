@@ -8,7 +8,7 @@ public class CreateStockDto
     [StringLength(10)]
     public required string TickerSymbol
     {
-        get => field;
+        get;
         init => field = value?.Trim().ToUpperInvariant() ?? string.Empty;
     }
 
@@ -16,14 +16,14 @@ public class CreateStockDto
     [StringLength(100)]
     public required string CompanyName
     {
-        get => field;
+        get;
         init => field = value?.Trim() ?? string.Empty;
     }
 
     [Range(0, 10000)]
     public decimal Price
     {
-        get => field;
+        get;
         init => field = Math.Round(Math.Max(0, value), 2);
     }
 }

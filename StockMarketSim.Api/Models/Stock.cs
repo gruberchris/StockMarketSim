@@ -3,10 +3,10 @@ namespace StockMarketSim.Api.Models;
 public class Stock
 {
     public required string TickerSymbol { get; init; }
-    
+
     public required string CompanyName
     {
-        get => field;
+        get;
         set
         {
             var trimmed = value?.Trim() ?? string.Empty;
@@ -17,10 +17,10 @@ public class Stock
             field = trimmed;
         }
     }
-    
+
     public decimal Price
     {
-        get => field;
+        get;
         set => field = Math.Round(Math.Max(0, value), 2);
     }
 }
