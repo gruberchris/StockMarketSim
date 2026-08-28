@@ -24,7 +24,7 @@ public class CreateStockDto
     public decimal Price
     {
         get;
-        init => field = Math.Round(Math.Max(0, value), 2);
+        init => field = Math.Round(value, 2);
     }
 }
 
