@@ -15,7 +15,7 @@ public class UpdateStockDto
     public decimal? Price
     {
         get;
-        init => field = value.HasValue ? Math.Round(Math.Max(0, value.Value), 2) : null;
+        init => field = value.HasValue ? Math.Round(value.Value, 2) : null;
     }
 }
 
